@@ -47,15 +47,8 @@ class User extends Authenticatable
          *
          * @return \Illuminate\Database\Eloquent\Relations\HasMany
          */
-        public function questions(): HasMany
+        public function questions()
         {
             return $this->hasMany(Question::class);
-        }
-
-        public function setTitleAttribute($value)
-        {
-            $this->attributes['title']=$value;
-            $this->attributes['slug']=str_slug($value);
-
         }
 }
